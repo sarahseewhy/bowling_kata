@@ -8,14 +8,6 @@ describe BowlingGame do
 		expect(game).to be_a BowlingGame
 	end
 
-	it 'can add elements in scoreboard array to get total score' do
-		game.roll(3)
-		game.roll(5)
-		game.roll(1)
-		17.times{game.roll(0)}
-		expect(game.total_score).to eq(9)
-	end
-
 	it 'can roll a gutter game' do
 		20.times{game.roll(0)}
 		expect(game.total_score).to eq(0)
@@ -40,6 +32,14 @@ describe BowlingGame do
 		game.roll(6)
 		16.times{game.roll(0)}
 		expect(game.total_score).to eq(28)
+	end
+
+	it 'can add all elements in scoreboard to get total score' do
+		game.roll(3)
+		game.roll(5)
+		game.roll(1)
+		17.times{game.roll(0)}
+		expect(game.total_score).to eq(9)
 	end
 
 end
